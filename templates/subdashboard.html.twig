@@ -1,0 +1,42 @@
+{% extends 'partials/base.html.twig' %}
+{% set blog_image = page.media.images[page.header.hero_image] ?: page.media.images|first %}
+{% set collection = page.collection() %}
+
+{% block stylesheets %}
+    {% do assets.addCss('theme://css/bricklayer.css') %}
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% do assets.add('theme://js/bricklayer.min.js') %}
+    {% do assets.add('theme://js/scopedQuerySelectorShim.min.js') %}
+{% endblock %}
+
+{% block hero %}
+    {% include 'partials/header.html.twig' with {id: 'header-hero', title: page.title, summary: page.summary, hero_image: blog_image} %}
+{% endblock %}
+
+{% block body %}
+    <section id="body-wrapper" class="section blog-listing">
+        <section class="container {{ grid_size }}">
+
+        {% embed 'partials/layout.html.twig' with {blog: page} %}
+            {% block item %}
+                <div class="bricklayer">
+                {% for child in page.children() %}
+                    {% include 'partials/blog-list-item.html.twig' with {blog: page, page: child, hideDate: true} %}
+                {% endfor %}
+                </div>
+            {% endblock %}
+        {% endembed %}
+        </section>
+    </section>
+    <script>
+        //Bricklayer
+        var bricklayer = new Bricklayer(document.querySelector('.bricklayer'))
+    </script>
+{% endblock %}
+
+
+
