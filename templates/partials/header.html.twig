@@ -1,0 +1,7 @@
+<section id="{{ id }}" class="section modular-hero hero overlay-dark-gradient text-light title-h1h2" {% if hero_image %}style="background-image: url('{{ hero_image.url }}');"{% endif %}>
+    <div class="image-overlay"></div>
+    <section class="container {{ grid_size }}" style="text-align: {{ page.header.hero_align|default('center') }}">
+        <h1>{{ title|raw }}</h1>
+        {#{{ summary|raw }}#}
+    </section>
+</section>

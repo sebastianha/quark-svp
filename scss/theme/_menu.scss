@@ -20,6 +20,7 @@
 
         &:hover, &:focus, &.active {
           color: $dropmenu-hover-text !important;
+          text-decoration: underline;
         }
 
         &:before {

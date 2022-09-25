@@ -4,7 +4,7 @@
   border-bottom: 1px solid rgba($gray-color, 0.2);
   @extend .default-animation;
 
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 700;
 
   background: $light-color;
@@ -40,7 +40,7 @@
   }
 
   .header-transparent &:not(.scrolled) {
-    background: rgba(#fff, 0.05);
+    background: rgba(#fff, 0.20);
     //border-bottom: 0 !important;
   }
 
@@ -79,6 +79,8 @@
 body.header-fixed.header-animated {
   #header.scrolled {
     height: $header-height-small;
+    box-shadow: -1px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    opacity: 0.9;
 
     .navbar-section {
       height: $header-height-small;
@@ -91,7 +93,7 @@ body.header-fixed.header-animated {
     }
 
     ~ .mobile-menu .button_container {
-      top: 0.5rem;
+      top: 0.7rem;
     }
   }
 }
