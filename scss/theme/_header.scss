@@ -61,7 +61,7 @@
 
   .logo {
     svg, img {
-      height: 42px;
+      height: 60px;
       display: inherit;
       @extend .default-animation;
     }
@@ -88,7 +88,7 @@ body.header-fixed.header-animated {
 
     .logo {
       svg, img {
-        height: 28px;
+        height: 40px;
       }
     }
 
